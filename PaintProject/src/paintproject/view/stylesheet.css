@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17-déc.-2014, 19:05:39
+    Author     : supeUse
+*/
+.vbox {
+    -fx-alignment: TOP_CENTER;
+    -fx-border-style: solid;
+    -fx-fill-width: true;
+}
+
+.pane {
+    -fx-alignment: CENTER;
+    -fx-background-color: lightgrey;
+    -fx-border-style: dotted;
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+}
+.scroll-pane {
+    -fx-background-color: darkslategray;
+    -fx-font-family: consolas; 
+}
+
+.scroll-pane .text-flow {
+    -fx-background-color: darkslategray;
+    -fx-wrap-text: false;
+    -fx-font-family: consolas; 
+    -fx-wrap-text: false;
+}
+.text-flow {
+    -fx-background-color: darkslategray;
+    -fx-wrap-text: false;
+    -fx-font-family: consolas; 
+    -fx-wrap-text: false;
+    -fx-font-size: 16;
+}
