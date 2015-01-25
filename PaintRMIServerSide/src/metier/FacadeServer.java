@@ -71,13 +71,23 @@ public class FacadeServer {
     }
 
     private static void setFigure(FigureDto target) throws PaintPersistanceException {
+        System.out.println("save");
+        System.out.println(target.getFigurename());
         PaintDB.insertFigure(target);
+        for (ShapeDto sh: target.getShapes()) {
+            System.out.println(sh.toString());
+        }
         shapeSaving(target.getShapes());
     }
 
     private static void shapeSaving(Collection<ShapeDto> shapes) throws PaintPersistanceException {
         for (ShapeDto shape : shapes) {
+            System.out.println(shape.getFigure() );
+            System.out.println(shape.getFillcolor());
+            System.out.println(shape.getId());
+            System.out.println(shape.getPointList());
             PaintDB.insertShape(shape);
+            System.out.println("ok !");
             if (shape.getShapetype() == ShapeEnum.ShapeBlock) {
                 /*récursif*/
                 shapeSaving(shape.getShapeList());

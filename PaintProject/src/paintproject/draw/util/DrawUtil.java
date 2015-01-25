@@ -8,6 +8,7 @@ package paintproject.draw.util;
 import java.util.List;
 import javafx.application.Platform;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.LineTo;
@@ -96,8 +97,9 @@ public class DrawUtil {
         System.out.println("" + rectangle.getId() + "++++++++++++++++++++++++++++++++++++++++++++");
         Rectangle rectangleFX = new Rectangle(rectangle.getX(),
                 rectangle.getY(), rectangle.getWidth(), rectangle.getHeight());
-        rectangleFX.setFill(Color.web(rectangle.getFillColor()));
-        rectangleFX.setStroke(Color.web(rectangle.getStrokeColor()));
+        System.out.println(Paint.valueOf(rectangle.getFillColor()));
+        rectangleFX.setFill(Paint.valueOf(rectangle.getFillColor()));
+        rectangleFX.setStroke(Paint.valueOf(rectangle.getStrokeColor()));
         rectangleFX.setStrokeWidth(rectangle.getStrokeWidth());
         Form form = new Form(rectangleFX, rectangle);
         feuille.getChildren().add(form);
@@ -111,8 +113,8 @@ public class DrawUtil {
         System.out.println("PAINT_PROJECT CLIENT DRAW_RECTANGLE");
         System.out.println("" + triangle.getId() + "++++++++++++++++++++++++++++++++++++++++++++");
         Polygon triangleFX = new Polygon(triangle.getDoubles());
-        triangleFX.setFill(Color.web(triangle.getFillColor()));
-        triangleFX.setStroke(Color.web(triangle.getStrokeColor()));
+        triangleFX.setFill(Paint.valueOf(triangle.getFillColor()));
+        triangleFX.setStroke(Paint.valueOf(triangle.getStrokeColor()));
         triangleFX.setStrokeWidth(triangle.getStrokeWidth());
         Form form = new Form(triangleFX, triangle);
         feuille.getChildren().add(form);
@@ -127,8 +129,8 @@ public class DrawUtil {
         // crée un cercle 
         Circle circleFX = new Circle(circle.getX(),
                 circle.getY(), circle.getRadiuslenght());
-        circleFX.setFill(Color.web(circle.getFillColor()));
-        circleFX.setStroke(Color.web(circle.getStrokeColor()));
+        circleFX.setFill(Paint.valueOf(circle.getFillColor()));
+        circleFX.setStroke(Paint.valueOf(circle.getStrokeColor()));
         circleFX.setStrokeWidth(circle.getStrokeWidth());
         Form form = new Form(circleFX, circle);
         // la dessine sur la feuille 
@@ -146,8 +148,8 @@ public class DrawUtil {
         Line lineFX = new Line(line.getX(),
                 line.getY(),
                 line.getEnd().getX(), line.getEnd().getY());
-        lineFX.setFill(Color.web(line.getFillColor()));
-        lineFX.setStroke(Color.web(line.getStrokeColor()));
+        lineFX.setFill(Paint.valueOf(line.getFillColor()));
+        lineFX.setStroke(Paint.valueOf(line.getStrokeColor()));
         lineFX.setStrokeWidth(line.getStrokeWidth());
         Form form = new Form(lineFX, line);
         form.setEcart(line.getEnd().getXGap(), line.getEnd().getYGap());
@@ -185,7 +187,7 @@ public class DrawUtil {
             i++;
         }
         i = 0;
-        pathFX.setStroke(Color.web(freeHand.getStrokeColor()));
+        pathFX.setStroke(Paint.valueOf(freeHand.getStrokeColor()));
         pathFX.setStrokeWidth(freeHand.getStrokeWidth());
         Form form = new Form(pathFX, freeHand);
         feuille.getChildren().add(form);

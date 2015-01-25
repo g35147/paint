@@ -320,8 +320,12 @@ public class EditionView extends AbstractView /*Application implements PaintVue*
             public void handle(MouseEvent event) {
                 try {
                     CircleModel circle = new CircleModel(new PointModel(getFeuille().tempX, getFeuille().tempY), getFeuille().radius);
-                    circle.setFillColor(barre.fillColor.toString());
-                    circle.setStrokeColor(barre.strokeColor.toString());
+                    
+                    circle.setFillColor(barre.fillColor.toString().substring(2, 8));
+                    System.out.println("couleur : ");
+                    System.out.println(barre.fillColor);
+                    System.out.println(barre.fillColor.toString());
+                    circle.setStrokeColor(barre.strokeColor.toString().substring(2, 8));
                     circle.setStrokeWidth(barre.tailleTrait);
                     getFeuille().getChildren().remove(getFeuille().circleTemp);
                     getModel().setState(new Draw(circle));
@@ -392,8 +396,8 @@ public class EditionView extends AbstractView /*Application implements PaintVue*
                                 getFeuille().rectTemp.getY()),
                                 getFeuille().rectTemp.getWidth(),
                                 getFeuille().rectTemp.getHeight());
-                        rectangle.setFillColor(barre.fillColor.toString());
-                        rectangle.setStrokeColor(barre.strokeColor.toString());
+                        rectangle.setFillColor(barre.fillColor.toString().substring(2, 8));
+                        rectangle.setStrokeColor(barre.strokeColor.toString().substring(2, 8));
                         rectangle.setStrokeWidth(barre.tailleTrait);
                         getFeuille().getChildren().remove(getFeuille().rectTemp);
                         feuille.rectTemp = null;
@@ -464,8 +468,8 @@ public class EditionView extends AbstractView /*Application implements PaintVue*
                         System.out.println("" + getFeuille().triTemp.getPoints().get(4));
                         System.out.println("" + getFeuille().triTemp.getPoints().get(5));
                         System.out.println("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
-                        triangle.setFillColor(barre.fillColor.toString());
-                        triangle.setStrokeColor(barre.strokeColor.toString());
+                        triangle.setFillColor(barre.fillColor.toString().substring(2, 8));
+                        triangle.setStrokeColor(barre.strokeColor.toString().substring(2, 8));
                         triangle.setStrokeWidth(barre.tailleTrait);
                         getFeuille().getChildren().remove(getFeuille().triTemp);
                         feuille.triTemp = null;
@@ -515,7 +519,7 @@ public class EditionView extends AbstractView /*Application implements PaintVue*
                 try {
                     LineModel line = new LineModel(new PointModel(getFeuille().lineTemp.getStartX(), getFeuille().lineTemp.getStartY()),
                             new PointModel(getFeuille().lineTemp.getEndX(), getFeuille().lineTemp.getEndY()));
-                    line.setStrokeColor(barre.strokeColor.toString());
+                    line.setStrokeColor(barre.strokeColor.toString().substring(2, 8));
                     line.setStrokeWidth(barre.tailleTrait);
                     getFeuille().getChildren().remove(getFeuille().lineTemp);
                     getModel().setState(new Draw(line));
@@ -580,7 +584,7 @@ public class EditionView extends AbstractView /*Application implements PaintVue*
                     }
 
                     PathModel path = new PathModel(pointsList);
-                    path.setStrokeColor(barre.strokeColor.toString());
+                    path.setStrokeColor(barre.strokeColor.toString().substring(2, 8));
                     path.setStrokeWidth(barre.tailleTrait);
                     getFeuille().getChildren().remove(getFeuille().path);
                     getModel().setState(new Draw(path));

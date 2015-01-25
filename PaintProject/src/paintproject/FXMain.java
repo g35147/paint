@@ -152,9 +152,9 @@ public class FXMain extends Application {
         Stage info;
         try {
             views.add(new EditionView(1000, 500, ((TextField) text).getText()));
-            views.add(new ReadOnlyView(1000, 500, ((TextField) text).getText()));
-            views.add(new StatistiqueView(1000, 500, ((TextField) text).getText()));
-            views.add(new TerminalView(1000, 500, ((TextField) text).getText()));
+           // views.add(new ReadOnlyView(1000, 500, ((TextField) text).getText()));
+           // views.add(new StatistiqueView(1000, 500, ((TextField) text).getText()));
+           // views.add(new TerminalView(1000, 500, ((TextField) text).getText()));
             startViews();
         } catch (RemoteException | NotBoundException | MalformedURLException ex) {
             for (AbstractView view : views) {
